@@ -1,2 +1,1 @@
-# SE_notes
-course notes and materials for Software Engineering in SJTU
+﻿# SE_notes发布在上海交通大学软件工程专业学习的专业课资料，包括课件、笔记、题目等等，具体如下：
