@@ -1,0 +1,218 @@
+
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html id="htmlId">
+<head>
+  <title>Coverage Report :: Triangle</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+  </style>
+</head>
+
+<body>
+<div class="header"></div>
+
+<div class="content">
+<div class="breadCrumbs">
+    [ <a href="../../index.html">all classes</a> ]
+    [ <a href="../index.html">&lt;empty package name&gt;</a> ]
+</div>
+
+<h1>Coverage Summary for Class: Triangle (&lt;empty package name&gt;)</h1>
+
+<table class="coverageStats">
+
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">Triangle</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (5/ 5)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (38/ 38)
+  </span>
+</td>
+</tr>
+  <tr>
+    <td class="name">Triangle$TriangleType</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/ 1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (2/ 2)
+  </span>
+</td>
+  </tr>
+<tr>
+  <td class="name"><strong>total</strong></td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (6/ 6)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (40/ 40)
+  </span>
+</td>
+</tr>
+</table>
+
+<br/>
+<br/>
+
+
+<div class="sourceCode"><i>1</i>&nbsp;import java.util.Scanner;
+<i>2</i>&nbsp;
+<b class="fc"><i>3</i>&nbsp;public class Triangle {</b>
+<b class="fc"><i>4</i>&nbsp;    public enum TriangleType {</b>
+<b class="fc"><i>5</i>&nbsp;        NOTriangle,GTriangle,RTriangle,D2Triangle,D3Triangle,UNKNOWN</b>
+<i>6</i>&nbsp;    }
+<i>7</i>&nbsp;    //判断是否能构成三角形
+<i>8</i>&nbsp;    public static TriangleType JudgeTriangle(int a,int b,int c)
+<i>9</i>&nbsp;    {
+<b class="fc"><i>10</i>&nbsp;        if(a+b&gt;c&amp;&amp;a+c&gt;b&amp;&amp;b+c&gt;a)</b>
+<i>11</i>&nbsp;        {
+<b class="fc"><i>12</i>&nbsp;            return TriangleType.GTriangle;</b>
+<i>13</i>&nbsp;        }
+<i>14</i>&nbsp;        else
+<i>15</i>&nbsp;        {
+<b class="fc"><i>16</i>&nbsp;            return TriangleType.NOTriangle;</b>
+<i>17</i>&nbsp;        }
+<i>18</i>&nbsp;    }
+<i>19</i>&nbsp;
+<i>20</i>&nbsp;    //判断是否能构成等腰三角形
+<i>21</i>&nbsp;    public static TriangleType JudgeDTriangle(int a,int b,int c)
+<i>22</i>&nbsp;    {
+<b class="fc"><i>23</i>&nbsp;        if(a==b||a==c||b==c)</b>
+<i>24</i>&nbsp;        {
+<b class="fc"><i>25</i>&nbsp;            if(a==b&amp;&amp;a==c)</b>
+<i>26</i>&nbsp;            {
+<b class="fc"><i>27</i>&nbsp;                return TriangleType.D3Triangle;</b>
+<i>28</i>&nbsp;            }
+<i>29</i>&nbsp;            else
+<i>30</i>&nbsp;            {
+<b class="fc"><i>31</i>&nbsp;                return TriangleType.D2Triangle;</b>
+<i>32</i>&nbsp;            }
+<i>33</i>&nbsp;        }
+<i>34</i>&nbsp;        else
+<i>35</i>&nbsp;        {
+<b class="fc"><i>36</i>&nbsp;            return TriangleType.UNKNOWN;</b>
+<i>37</i>&nbsp;        }
+<i>38</i>&nbsp;
+<i>39</i>&nbsp;    }
+<i>40</i>&nbsp;    //判断是否是直角三角形
+<i>41</i>&nbsp;    public static TriangleType JudgeRTriangle(int a,int b,int c)
+<i>42</i>&nbsp;    {
+<i>43</i>&nbsp;        int r1,r2,r3;
+<b class="fc"><i>44</i>&nbsp;        r1=a*a+b*b-c*c;</b>
+<b class="fc"><i>45</i>&nbsp;        r2=a*a+c*c-b;</b>
+<b class="fc"><i>46</i>&nbsp;        r3=b*b+c*c-a*a;</b>
+<i>47</i>&nbsp;        /*System.out.println(r1+r2+r3);*/
+<b class="fc"><i>48</i>&nbsp;        if(r1==0||r2==0||r3==0)</b>
+<i>49</i>&nbsp;        {
+<b class="fc"><i>50</i>&nbsp;            return TriangleType.RTriangle;</b>
+<i>51</i>&nbsp;        }
+<i>52</i>&nbsp;        else
+<i>53</i>&nbsp;        {
+<b class="fc"><i>54</i>&nbsp;            return TriangleType.UNKNOWN;</b>
+<i>55</i>&nbsp;        }
+<i>56</i>&nbsp;
+<i>57</i>&nbsp;    }
+<i>58</i>&nbsp;
+<i>59</i>&nbsp;    public static void main(String [] args)
+<i>60</i>&nbsp;    {
+<i>61</i>&nbsp;        int a;
+<i>62</i>&nbsp;        int b;
+<i>63</i>&nbsp;        int c;
+<b class="fc"><i>64</i>&nbsp;        if(args.length != 3)</b>
+<b class="fc"><i>65</i>&nbsp;            return;</b>
+<i>66</i>&nbsp;        try{
+<b class="fc"><i>67</i>&nbsp;            a = Integer.valueOf(args[0]);</b>
+<b class="fc"><i>68</i>&nbsp;            b = Integer.valueOf(args[1]);</b>
+<b class="fc"><i>69</i>&nbsp;            c = Integer.valueOf(args[2]);</b>
+<b class="fc"><i>70</i>&nbsp;        }catch (Exception e){</b>
+<b class="fc"><i>71</i>&nbsp;            System.out.println(&quot;你输入的三边不合法！&quot;);</b>
+<b class="fc"><i>72</i>&nbsp;            return;</b>
+<b class="fc"><i>73</i>&nbsp;        }</b>
+<i>74</i>&nbsp;
+<i>75</i>&nbsp;//        else{
+<i>76</i>&nbsp;//            System.out.println(&quot;请输入三角形的三条整数边: &quot;);
+<i>77</i>&nbsp;//            Scanner scanner=new Scanner(System.in);
+<i>78</i>&nbsp;//            a=scanner.nextInt();
+<i>79</i>&nbsp;//            b=scanner.nextInt();
+<i>80</i>&nbsp;//            c=scanner.nextInt();
+<i>81</i>&nbsp;//        }
+<i>82</i>&nbsp;        //判断输入三边是否合法
+<b class="fc"><i>83</i>&nbsp;        if(a&lt;=0||a&gt;200||b&lt;=0||b&gt;200||c&lt;=0||c&gt;200)</b>
+<i>84</i>&nbsp;        {
+<b class="fc"><i>85</i>&nbsp;            System.out.println(&quot;你输入的三边不合法！&quot;);</b>
+<i>86</i>&nbsp;        }
+<i>87</i>&nbsp;        else
+<i>88</i>&nbsp;        {
+<i>89</i>&nbsp;            //判断是否能构成三角形
+<b class="fc"><i>90</i>&nbsp;            if(JudgeTriangle(a,b,c) == TriangleType.NOTriangle)</b>
+<b class="fc"><i>91</i>&nbsp;                System.out.println(&quot;这不是三角形&quot;);</b>
+<i>92</i>&nbsp;            else{
+<i>93</i>&nbsp;                //判断是否是等腰或等边三角形
+<b class="fc"><i>94</i>&nbsp;                if(JudgeDTriangle(a,b,c) == TriangleType.D2Triangle)</b>
+<b class="fc"><i>95</i>&nbsp;                    System.out.println(&quot;该三角形是等腰三角形&quot;);</b>
+<b class="fc"><i>96</i>&nbsp;                if(JudgeDTriangle(a,b,c) == TriangleType.D3Triangle)</b>
+<b class="fc"><i>97</i>&nbsp;                    System.out.println(&quot;该三角形是等边三角形&quot;);</b>
+<i>98</i>&nbsp;                //判断是否是直角三角形
+<b class="fc"><i>99</i>&nbsp;                if(JudgeRTriangle(a,b,c) == TriangleType.RTriangle)</b>
+<b class="fc"><i>100</i>&nbsp;                    System.out.println(&quot;该三角形是直角三角形&quot;);</b>
+<i>101</i>&nbsp;                //判断是一般三角形
+<b class="fc"><i>102</i>&nbsp;                if(JudgeDTriangle(a,b,c) == TriangleType.UNKNOWN</b>
+<b class="fc"><i>103</i>&nbsp;                        &amp;&amp;JudgeRTriangle(a,b,c) == TriangleType.UNKNOWN)</b>
+<b class="fc"><i>104</i>&nbsp;                    System.out.println(&quot;该三角形是一般三角形!&quot;);</b>
+<i>105</i>&nbsp;            }
+<i>106</i>&nbsp;        }
+<b class="fc"><i>107</i>&nbsp;    }</b>
+<i>108</i>&nbsp;}
+<i>109</i>&nbsp;
+</div>
+</div>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2019-06-02 23:27</div>
+</div>
+</body>
+</html>
