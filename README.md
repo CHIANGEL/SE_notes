@@ -9,3 +9,7 @@
     - 教材Database System Concepts的课后习题答案
     - 2016年数据库原理与技术的考试真题（很重要，每年题目都没怎么变动：）
     - CNMOOC上的习题合集
+3. [SE228 web开发技术](https://github.com/CHIANGEL/SE_notes/tree/master/SE228-web%E5%BC%80%E5%8F%91%E6%8A%80%E6%9C%AF)
+    - 课件
+    - 个人整理的知识点详解，中文版，考试用
+    - 课件合集pdf，考试打印用
